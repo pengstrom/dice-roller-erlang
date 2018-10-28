@@ -1,9 +1,13 @@
-dice_roller
-=====
+# Dice Roller
 
-An OTP application
+An OTP application.
 
-Build
------
+## Build
+```
+rebar3 compile
+```
 
-    $ rebar3 compile
+# Test
+```
+rebar3 proper
+```
