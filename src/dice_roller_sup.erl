@@ -31,7 +31,9 @@ start_link() ->
 %% Before OTP 18 tuples must be used to specify a child. e.g.
 %% Child :: {Id,StartFunc,Restart,Shutdown,Type,Modules}
 init([]) ->
-    {ok, { {one_for_all, 0, 1}, []} }.
+    Server = {roll_server, {roll_server, start_link, []},
+          permanent, 2000, worker, [roll_server]},
+    {ok, { {one_for_all, 0, 1}, [Server]} }.
 
 %%====================================================================
 %% Internal functions
